@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<PropertyGroup Condition="'$(CudaTargetImportPath)' == ''">
-		<CudaTargetImportPath Condition="'$(CUDA_PATH_V10_1)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.targets</CudaTargetImportPath>	
+	<PropertyGroup>
+		<CudaTargetImportPath Condition="'$(CudaTargetImportPath)' == '' and '$(CUDA_PATH_V10_1)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.targets</CudaTargetImportPath>
+		<CudaSettingsImportPath Condition="'$(CudaSettingsImportPath)' == '' and '$(CUDA_PATH_V10_1)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.props</CudaSettingsImportPath>
 		<CudaTargetImportPath Condition="'$(CudaTargetImportPath)' == '' and '$(CUDA_PATH_V10_0)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets</CudaTargetImportPath>
-		<CudaTargetImportPath Condition="'$(CudaTargetImportPath)' == '' and '$(CUDA_PATH_V9_2)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 9.2.targets</CudaTargetImportPath>		
+		<CudaSettingsImportPath Condition="'$(CudaSettingsImportPath)' == '' and '$(CUDA_PATH_V10_0)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.props</CudaSettingsImportPath>
+		<CudaTargetImportPath Condition="'$(CudaTargetImportPath)' == '' and '$(CUDA_PATH_V9_2)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 9.2.targets</CudaTargetImportPath>
+		<CudaSettingsImportPath Condition="'$(CudaSettingsImportPath)' == '' and '$(CUDA_PATH_V9_2)' != ''">$(VCTargetsPath)\BuildCustomizations\CUDA 9.2.props</CudaSettingsImportPath>
 	</PropertyGroup>
 	
-  <ImportGroup Label="ExtensionTargets">
-    <!-- <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets" /> -->
-	<!-- <CudaTargetPath Condition="'$(CUDA_PATH_V10_0)' != ''">"$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets"</CudaTargetPath> -->
-	<!-- <CudaVersion>"Path.GetFileName($(CUDA_PATH).TrimEnd('\\')"</CudaVersion> -->
-	<!-- <CudaVersion Condition="'$(CudaVersion)' == ''">"$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets"</CudaVersion> -->
-	<!-- <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets" /> -->
-
-
-	<Import Project="$(CudaTargetImportPath)" />	
-	<!-- <Import Project="$(CudaVersion)" /> -->
-  </ImportGroup>  
+	<ImportGroup Label="ExtensionSettings">
+		<Import Project="$(CudaSettingsImportPath)" />
+	</ImportGroup>
+    <ImportGroup Label="ExtensionTargets">
+		<!-- <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets" /> -->
+		<!-- <CudaTargetPath Condition="'$(CUDA_PATH_V10_0)' != ''">"$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets"</CudaTargetPath> -->
+		<!-- <CudaVersion>"Path.GetFileName($(CUDA_PATH).TrimEnd('\\')"</CudaVersion> -->
+		<!-- <CudaVersion Condition="'$(CudaVersion)' == ''">"$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets"</CudaVersion> -->
+		<!-- <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets" /> -->
+		<Import Project="$(CudaTargetImportPath)" />	
+		<!-- <Import Project="$(CudaVersion)" /> -->
+	</ImportGroup> 
+	
 </Project>
