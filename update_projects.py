@@ -23,14 +23,29 @@ def find_visual_studio_projects():
 
 
 def make_project_cuda_version_independent(project):
-    root = El.parse(project).getroot()
-    for type_tag in root.findall('ImportGroup/type'):
-        value = type_tag.get('foobar')
-        print(value)
+    cuda_props = "$(SolutionDir)cuda.props"
+    tree = El.parse(project)
+    root = tree
+    cuda_props_found = find_attribute(root, cuda_props)
+    if not cuda_props_found:
+        pass
+
+
+def find_attribute(root, at):
+    for child in root:
+        if 'Label' in child.attrib:
+            label = child.attrib['Label']
+            if label == 'ProjectConfigurations':
+                for import_tag in child:
+                    if 'Project' in import_tag.attrib:
+                        project_attribute = import_tag.attrib['Project']
+                        if project_attribute == at:
+                            return True
+
+    return False
+
 
 def main():
-
-    #find_project_files()
     projects = find_visual_studio_projects()
     for project in projects:
         make_project_cuda_version_independent(project)
