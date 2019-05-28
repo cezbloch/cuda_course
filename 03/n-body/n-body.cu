@@ -4,6 +4,7 @@
 #include "timer.h"
 #include "check.h"
 #include <device_launch_parameters.h>
+#include "cuda_runtime.h"
 
 
 #define SOFTENING 1e-9f
@@ -121,7 +122,7 @@ int main(const int argc, const char** argv) {
   }
 
   double avgTime = totalTime / (double)(nIters);
-  float billionsOfOpsPerSecond = 1e-9 * nBodies * nBodies / avgTime;
+  auto billionsOfOpsPerSecond = 1e-9 * nBodies * nBodies / avgTime;
 
 #ifdef ASSESS
   checkPerformance(buf, billionsOfOpsPerSecond, salt);
