@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "common.h"
+#include <device_launch_parameters.h>
 
 
 #define N 2048 * 2048 // Number of elements in each vector

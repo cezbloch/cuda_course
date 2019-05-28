@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "timer.h"
 #include "check.h"
-#include "common.h"
+#include <device_launch_parameters.h>
 
 
 #define SOFTENING 1e-9f

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "common.h"
+#include <device_launch_parameters.h>
 
 
 // Simple define to index into a 1D array from 2D space

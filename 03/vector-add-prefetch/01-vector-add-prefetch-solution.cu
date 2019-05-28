@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "common.h"
+#include <device_launch_parameters.h>
 
 
 void initWith(float num, float *a, int N)

@@ -1,4 +1,4 @@
-#include "common.h"
+#include <device_launch_parameters.h>
 
 
 __global__ void deviceKernel(int *a, int N)
