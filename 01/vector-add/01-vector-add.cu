@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 void initWith(float num, float *a, int N)
 {

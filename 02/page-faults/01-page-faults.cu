@@ -1,5 +1,7 @@
-__global__
-void deviceKernel(int *a, int N)
+#include "common.h"
+
+
+__global__ void deviceKernel(int *a, int N)
 {
   int idx = threadIdx.x + blockIdx.x * blockDim.x;
   int stride = blockDim.x * gridDim.x;

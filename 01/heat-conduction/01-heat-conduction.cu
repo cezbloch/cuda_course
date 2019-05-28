@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <math.h>
+#include "common.h"
+
 
 // Simple define to index into a 1D array from 2D space
 #define I2D(num, c, r) ((r)*(num)+(c))

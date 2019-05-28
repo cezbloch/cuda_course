@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 void helloCPU()
 {

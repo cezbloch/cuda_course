@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 __global__
 void initWith(float num, float *a, int N)
@@ -59,8 +61,8 @@ int main()
   cudaMalloc(&c, size);
   cudaMallocHost(&h_c, size);
 
-  size_t threadsPerBlock;
-  size_t numberOfBlocks;
+  int threadsPerBlock;
+  int numberOfBlocks;
 
   threadsPerBlock = 256;
   numberOfBlocks = 32 * numberOfSMs;

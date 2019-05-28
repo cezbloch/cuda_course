@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 void init(int *a, int N)
 {
@@ -48,8 +50,8 @@ int main()
 
   init(a, N);
 
-  size_t threads_per_block = 2048;
-  size_t number_of_blocks = 32;
+  int threads_per_block = 2048;
+  int number_of_blocks = 32;
 
   doubleElements << <number_of_blocks, threads_per_block >> > (a, N);
   cudaDeviceSynchronize();

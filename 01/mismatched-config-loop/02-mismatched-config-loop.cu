@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 /*
  * Currently, `initializeElementsTo`, if executed in a thread whose
@@ -32,7 +34,7 @@ int main()
    * fixed at `256`: do not modify `threads_per_block`.
    */
 
-  size_t threads_per_block = 256;
+  int threads_per_block = 256;
 
   /*
    * Assign a value to `number_of_blocks` that will
@@ -40,7 +42,7 @@ int main()
    * the fixed values for `N` and `threads_per_block`.
    */
 
-  size_t number_of_blocks = 0;
+  int number_of_blocks = 0;
 
   int initialValue = 6;
 

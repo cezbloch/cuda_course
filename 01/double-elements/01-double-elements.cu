@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 /*
  * Initialize array values on the host.
@@ -58,8 +60,8 @@ int main()
 
   init(a, N);
 
-  size_t threads_per_block = 10;
-  size_t number_of_blocks = 10;
+  int threads_per_block = 10;
+  int number_of_blocks = 10;
 
   /*
    * This launch will not work until the pointer `a` is also

@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 #define N  64
 

@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 __global__ void printNumber(int number)
 {

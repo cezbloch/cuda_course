@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 #define N 2048 * 2048 // Number of elements in each vector
 

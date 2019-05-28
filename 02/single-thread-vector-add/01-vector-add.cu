@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 /*
  * Host function to initialize vector elements. This function
@@ -66,8 +68,8 @@ int main()
   initWith(4, b, N);
   initWith(0, c, N);
 
-  size_t threadsPerBlock;
-  size_t numberOfBlocks;
+  int threadsPerBlock;
+  int numberOfBlocks;
 
   /*
    * nvprof should register performance changes when execution configuration

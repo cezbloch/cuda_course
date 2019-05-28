@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 void initWith(float num, float *a, int N)
 {
@@ -60,8 +62,8 @@ int main()
   cudaMemPrefetchAsync(b, size, deviceId);
   cudaMemPrefetchAsync(c, size, deviceId);
 
-  size_t threadsPerBlock;
-  size_t numberOfBlocks;
+  int threadsPerBlock;
+  int numberOfBlocks;
 
   threadsPerBlock = 256;
   numberOfBlocks = 32 * numberOfSMs;

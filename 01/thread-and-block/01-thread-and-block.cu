@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include "common.h"
+
 
 __global__ void printSuccessForCorrectExecutionConfiguration()
 {
-
   if (threadIdx.x == 1023 && blockIdx.x == 255)
   {
     printf("Success!\n");

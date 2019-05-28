@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 void initWith(float num, float *a, int N)
 {
@@ -56,8 +58,8 @@ int main()
   initWith(4, b, N);
   initWith(0, c, N);
 
-  size_t threadsPerBlock;
-  size_t numberOfBlocks;
+  int threadsPerBlock;
+  int numberOfBlocks;
 
   threadsPerBlock = 256;
   numberOfBlocks = 32 * numberOfSMs;

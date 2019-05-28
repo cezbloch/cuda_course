@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "common.h"
+
 
 /*
  * Refactor firstParallel so that it can run on the GPU.
