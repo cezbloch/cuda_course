@@ -90,5 +90,9 @@
   <ItemGroup>
     <CudaCompile Include="n-body.cu" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="check.h" />
+    <ClInclude Include="timer.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
