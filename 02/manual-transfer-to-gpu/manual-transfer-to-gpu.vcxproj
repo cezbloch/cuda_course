@@ -14,10 +14,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7EBE8C8D-5963-4659-B4A7-1DF88D4CB189}</ProjectGuid>
+    <ProjectGuid>{128EB9DC-CEAB-41BB-8230-DAA2590A77D6}</ProjectGuid>
     <RootNamespace>prefetch_to_gpu</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>06a-prefetch-to-gpu</ProjectName>
+    <ProjectName>06b-manual-transfer-to-gpu</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -88,7 +88,7 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="01-vector-add-prefetch.cu" />
+    <CudaCompile Include="manual-transfer_to_gpu.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

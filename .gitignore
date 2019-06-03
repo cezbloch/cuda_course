@@ -384,3 +384,5 @@ ASALocalRun/
 /03/init-kernel-solution/CudaCompile.read.1u.tlog
 /03/init-in-streams/CudaCompile.write.1u.tlog
 /03/init-in-streams/CudaCompile.read.1u.tlog
+/02/manual-transfer-to-gpu/CudaCompile.write.1u.tlog
+/02/manual-transfer-to-gpu/CudaCompile.read.1u.tlog

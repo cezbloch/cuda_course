@@ -41,29 +41,31 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-page-faults", "02\page-f
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-initialize-in-kernel-vector-add", "02\initialize-in-kernel-vector-add\initialize-in-kernel-vector-add.vcxproj", "{3319E33D-158D-4553-9BAC-525C99AB9A3C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06-prefetch-to-gpu", "02\prefetch-to-gpu\prefetch-to-gpu.vcxproj", "{7EBE8C8D-5963-4659-B4A7-1DF88D4CB189}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06a-prefetch-to-gpu", "02\prefetch-to-gpu\prefetch-to-gpu.vcxproj", "{7EBE8C8D-5963-4659-B4A7-1DF88D4CB189}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07-saxpy", "02\saxpy\saxpy.vcxproj", "{E8185F98-4005-488D-8D4D-1844BA69058D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Asynchronous Streaming and Visual Profiling", "03 - Asynchronous Streaming and Visual Profiling", "{9A4F478F-4113-4DA3-8A66-D557D2FCC154}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01 - vector-add-no-prefetch", "03\vector-add-no-prefetch\vector-add-no-prefetch.vcxproj", "{D028FCFF-F5D2-49C3-AD05-9F83E776F77B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01-vector-add-no-prefetch", "03\vector-add-no-prefetch\vector-add-no-prefetch.vcxproj", "{D028FCFF-F5D2-49C3-AD05-9F83E776F77B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02 - vector-add-prefetch", "03\vector-add-prefetch\vector-add-prefetch.vcxproj", "{97D8D37B-7632-4231-990A-2C81B9A1E39B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-vector-add-prefetch", "03\vector-add-prefetch\vector-add-prefetch.vcxproj", "{97D8D37B-7632-4231-990A-2C81B9A1E39B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03 - init-kernel-solution", "03\init-kernel-solution\init-kernel-solution.vcxproj", "{AE5B43C0-10C8-49F2-B34B-3F2BB18F0F32}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-init-kernel-solution", "03\init-kernel-solution\init-kernel-solution.vcxproj", "{AE5B43C0-10C8-49F2-B34B-3F2BB18F0F32}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - prefetch-check", "03\prefetch-check\prefetch-check.vcxproj", "{8B4E0815-E0F2-4BD5-9C29-11672BE1F0C4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-prefetch-check", "03\prefetch-check\prefetch-check.vcxproj", "{8B4E0815-E0F2-4BD5-9C29-11672BE1F0C4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05 - print-numbers", "03\print-numbers\print-numbers.vcxproj", "{6F68E5ED-A3E1-41B5-9598-7924A6DEF9D9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-print-numbers", "03\print-numbers\print-numbers.vcxproj", "{6F68E5ED-A3E1-41B5-9598-7924A6DEF9D9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 - init-in-streams", "03\init-in-streams\init-in-streams.vcxproj", "{7AB3D4B1-C275-4CE5-8DB6-E7C0A6CB714B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06-init-in-streams", "03\init-in-streams\init-in-streams.vcxproj", "{7AB3D4B1-C275-4CE5-8DB6-E7C0A6CB714B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07 - n-body", "03\n-body\n-body.vcxproj", "{E16DABBF-5499-489D-A69D-309FD4680F3F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07-n-body", "03\n-body\n-body.vcxproj", "{E16DABBF-5499-489D-A69D-309FD4680F3F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08 - vector-add-manual-alloc", "03\vector-add-manual-alloc\vector-add-manual-alloc.vcxproj", "{9A4ACE5C-BB56-49C0-946E-5C224E2E2210}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08-vector-add-manual-alloc", "03\vector-add-manual-alloc\vector-add-manual-alloc.vcxproj", "{9A4ACE5C-BB56-49C0-946E-5C224E2E2210}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09 - overlap-transfer", "03\overlap-transfer\overlap-transfer.vcxproj", "{72A03E09-832F-40D3-A0B1-0BAAE1CE97A4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09-overlap-transfer", "03\overlap-transfer\overlap-transfer.vcxproj", "{72A03E09-832F-40D3-A0B1-0BAAE1CE97A4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06b-manual-transfer-to-gpu", "02\manual-transfer-to-gpu\manual-transfer-to-gpu.vcxproj", "{128EB9DC-CEAB-41BB-8230-DAA2590A77D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +185,10 @@ Global
 		{72A03E09-832F-40D3-A0B1-0BAAE1CE97A4}.Debug|x64.Build.0 = Debug|x64
 		{72A03E09-832F-40D3-A0B1-0BAAE1CE97A4}.Release|x64.ActiveCfg = Release|x64
 		{72A03E09-832F-40D3-A0B1-0BAAE1CE97A4}.Release|x64.Build.0 = Release|x64
+		{128EB9DC-CEAB-41BB-8230-DAA2590A77D6}.Debug|x64.ActiveCfg = Debug|x64
+		{128EB9DC-CEAB-41BB-8230-DAA2590A77D6}.Debug|x64.Build.0 = Debug|x64
+		{128EB9DC-CEAB-41BB-8230-DAA2590A77D6}.Release|x64.ActiveCfg = Release|x64
+		{128EB9DC-CEAB-41BB-8230-DAA2590A77D6}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -216,6 +222,7 @@ Global
 		{E16DABBF-5499-489D-A69D-309FD4680F3F} = {9A4F478F-4113-4DA3-8A66-D557D2FCC154}
 		{9A4ACE5C-BB56-49C0-946E-5C224E2E2210} = {9A4F478F-4113-4DA3-8A66-D557D2FCC154}
 		{72A03E09-832F-40D3-A0B1-0BAAE1CE97A4} = {9A4F478F-4113-4DA3-8A66-D557D2FCC154}
+		{128EB9DC-CEAB-41BB-8230-DAA2590A77D6} = {9AB5A3EC-EC17-4948-A335-AFFF380223EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DB1F7BC-7F4B-4B28-B64A-AEA32A892907}
