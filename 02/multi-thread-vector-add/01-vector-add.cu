@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <cstdlib>
 #include <device_launch_parameters.h>
-
+#include <cuda_runtime.h>
 
 /*
  * Host function to initialize vector elements. This function

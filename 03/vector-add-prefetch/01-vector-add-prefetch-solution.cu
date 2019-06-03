@@ -1,5 +1,8 @@
 #include <stdio.h>
+#include <cstdlib>
 #include <device_launch_parameters.h>
+#include <cuda_runtime.h>
+
 
 
 void initWith(float num, float *a, int N)

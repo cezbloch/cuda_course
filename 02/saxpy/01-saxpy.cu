@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <cstdlib>
 #include <device_launch_parameters.h>
+#include <cuda_runtime.h>
 
 
 #define N 2048 * 2048 // Number of elements in each vector

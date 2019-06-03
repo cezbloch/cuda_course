@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <device_launch_parameters.h>
+#include <cuda_runtime.h>
 
 
 __global__ void printSuccessForCorrectExecutionConfiguration()

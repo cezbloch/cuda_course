@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <cstdlib>
+#include <device_launch_parameters.h>
+#include <cuda_runtime.h>
 
 /*
  * Refactor host function to run as CUDA kernel

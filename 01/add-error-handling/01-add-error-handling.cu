@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <device_launch_parameters.h>
+#include <cuda_runtime.h>
 
 
 void init(int *a, int N)

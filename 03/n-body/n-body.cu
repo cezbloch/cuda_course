@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include "timer.h"
 #include "check.h"
+#include <cstdlib>
 #include <device_launch_parameters.h>
-#include "cuda_runtime.h"
+#include <cuda_runtime.h>
 
 
 #define SOFTENING 1e-9f

@@ -1,4 +1,6 @@
+#include <cstdlib>
 #include <device_launch_parameters.h>
+#include <cuda_runtime.h>
 
 
 __global__ void deviceKernel(int *a, int N)

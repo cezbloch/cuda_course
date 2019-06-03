@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <cstdlib>
+#include <device_launch_parameters.h>
+#include <cuda_runtime.h>
+
 
 void initWith(float num, float *a, int N)
 {
@@ -42,7 +46,10 @@ int main()
   cudaDeviceGetAttribute(&numberOfSMs, cudaDevAttrMultiProcessorCount, deviceId);
   printf("Device ID: %d\tNumber of SMs: %d\n", deviceId, numberOfSMs);
 
-  const int N = 2<<24;
+  cudaDeviceProp props;
+  cudaGetDeviceProperties(&props, deviceId);
+
+  const int N = 2 << 24;
   size_t size = N * sizeof(float);
 
   float *a;
@@ -62,13 +69,14 @@ int main()
    * and before launching the kernel, to avoid host to GPU page
    * faulting.
    */
+  if (props.concurrentManagedAccess) {
+    cudaMemPrefetchAsync(a, size, deviceId);
+    cudaMemPrefetchAsync(b, size, deviceId);
+    cudaMemPrefetchAsync(c, size, deviceId);
+  }
 
-  cudaMemPrefetchAsync(a, size, deviceId);
-  cudaMemPrefetchAsync(b, size, deviceId);
-  cudaMemPrefetchAsync(c, size, deviceId);
-
-  size_t threadsPerBlock;
-  size_t numberOfBlocks;
+  int threadsPerBlock;
+  int numberOfBlocks;
 
   threadsPerBlock = 256;
   numberOfBlocks = 32 * numberOfSMs;

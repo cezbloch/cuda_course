@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <device_launch_parameters.h>
+#include <cuda_runtime.h>
 
 
 // Simple define to index into a 1D array from 2D space
