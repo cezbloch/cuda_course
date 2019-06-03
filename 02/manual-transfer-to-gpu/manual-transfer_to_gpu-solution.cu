@@ -52,10 +52,16 @@ int main()
   float *a;
   float *b;
   float *c;
+  float *h_a;
+  float *h_b;
+  float *h_c;
 
-  cudaMallocManaged(&a, size);
-  cudaMallocManaged(&b, size);
-  cudaMallocManaged(&c, size);
+  cudaMalloc(&a, size);
+  cudaMalloc(&b, size);
+  cudaMalloc(&c, size);
+  cudaMallocHost(&h_a, size);
+  cudaMallocHost(&h_b, size);
+  cudaMallocHost(&h_c, size);
 
   int threadsPerBlock;
   int numberOfBlocks;
@@ -66,13 +72,19 @@ int main()
   cudaError_t addArraysErr;
   cudaError_t asyncErr;
 
-  initWith(3, a, N);
-  initWith(4, b, N);
-  initWith(0, c, N);
+  initWith(3, h_a, N);
+  initWith(4, h_b, N);
+  initWith(0, h_c, N);
+
+  cudaMemcpy(a, h_a, size, cudaMemcpyHostToDevice);
+  cudaMemcpy(b, h_b, size, cudaMemcpyHostToDevice);
+  cudaMemcpy(c, h_c, size, cudaMemcpyHostToDevice);
 
   cudaDeviceSynchronize();
 
   addArraysInto << <numberOfBlocks, threadsPerBlock >> > (c, a, b, N);
+
+  cudaMemcpy(h_c, c, size, cudaMemcpyDeviceToHost);
 
   addArraysErr = cudaGetLastError();
   if (addArraysErr != cudaSuccess) printf("Error: %s\n", cudaGetErrorString(addArraysErr));
@@ -80,9 +92,10 @@ int main()
   asyncErr = cudaDeviceSynchronize();
   if (asyncErr != cudaSuccess) printf("Error: %s\n", cudaGetErrorString(asyncErr));
 
-  checkElementsAre(7, c, N);
+  checkElementsAre(7, h_c, N);
 
   cudaFree(a);
   cudaFree(b);
   cudaFree(c);
+  cudaFreeHost(h_c);
 }
