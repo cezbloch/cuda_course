@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "timer.h"
-#include "check.h"
 #include <cstdlib>
 #include <device_launch_parameters.h>
 #include <cuda_runtime.h>
@@ -60,14 +59,8 @@ int main(const int argc, const char** argv) {
    */
 
   int nBodies = 2 << 11;
-  int salt = 0;
+
   if (argc > 1) nBodies = 2 << atoi(argv[1]);
-
-  /*
-   * This salt is for assessment reasons. Tampering with it will result in automatic failure.
-   */
-
-  if (argc > 2) salt = atoi(argv[2]);
 
   const float dt = 0.01f; // time step
   const int nIters = 10;  // simulation iterations
@@ -85,7 +78,7 @@ int main(const int argc, const char** argv) {
 
   randomizeBodies(buf, 6 * nBodies); // Init pos / vel data
 
-  double totalTime = 0.0;
+  double totalTimeInSeconds = 0.0;
 
   /*
    * This simulation will run for 10 cycles of time, calculating gravitational
@@ -95,7 +88,7 @@ int main(const int argc, const char** argv) {
    /*******************************************************************/
    // Do not modify these 2 lines of code.
   for (int iter = 0; iter < nIters; iter++) {
-    StartTimer();
+    StartGpuTimer();
     /*******************************************************************/
 
     /*
@@ -118,20 +111,14 @@ int main(const int argc, const char** argv) {
 
     /*******************************************************************/
     // Do not modify the code in this section.
-    const double tElapsed = GetTimer() / 1000.0;
-    totalTime += tElapsed;
+    const double elapsedSeconds = GetGpuTimerInMiliseconds() / 1000.0;
+    totalTimeInSeconds += elapsedSeconds;
   }
 
-  double avgTime = totalTime / (double)(nIters);
+  double avgTime = totalTimeInSeconds / (double)(nIters);
   auto billionsOfOpsPerSecond = 1e-9 * nBodies * nBodies / avgTime;
 
-#ifdef ASSESS
-  checkPerformance(buf, billionsOfOpsPerSecond, salt);
-#else
-  checkAccuracy(buf, nBodies);
   printf("%d Bodies: average %0.3f Billion Interactions / second\n", nBodies, billionsOfOpsPerSecond);
-  salt += 1;
-#endif
   /*******************************************************************/
 
   /*
