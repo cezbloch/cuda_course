@@ -14,10 +14,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AE5B43C0-10C8-49F2-B34B-3F2BB18F0F32}</ProjectGuid>
-    <RootNamespace>init_kernel_solution</RootNamespace>
+    <ProjectGuid>{A2780FE0-750B-48AE-8647-3D2CF7CB9A70}</ProjectGuid>
+    <RootNamespace>prefetch_to_gpu</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>03a-init-kernel-solution</ProjectName>
+    <ProjectName>02b-manual-transfer-to-gpu</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -88,7 +88,7 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="01-init-kernel-solution.cu" />
+    <CudaCompile Include="manual-transfer_to_gpu.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

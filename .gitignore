@@ -386,3 +386,7 @@ ASALocalRun/
 /03/init-in-streams/CudaCompile.read.1u.tlog
 /02/manual-transfer-to-gpu/CudaCompile.write.1u.tlog
 /02/manual-transfer-to-gpu/CudaCompile.read.1u.tlog
+/03/init-kernel-solution-no-prefetch/CudaCompile.write.1u.tlog
+/03/init-kernel-solution-no-prefetch/CudaCompile.read.1u.tlog
+/03/manual-transfer-to-gpu/CudaCompile.write.1u.tlog
+/03/manual-transfer-to-gpu/CudaCompile.read.1u.tlog
